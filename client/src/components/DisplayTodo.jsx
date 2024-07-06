@@ -30,7 +30,7 @@ const DisplayTodo = ({ todos }) => {
     };
     try {
       await axios.delete(
-        `http://localhost:3000/api/todo/deleteTodo/${id}`,
+        `https://todozen-iolq.onrender.com/api/todo/deleteTodo/${id}`,
         options
       );
       setTodos(todos.filter((todo) => todo._id !== id));
@@ -86,7 +86,7 @@ const DisplayTodo = ({ todos }) => {
     try {
       const updateTodo = { title: editTitle, body: editBody };
       await axios.put(
-        `http://localhost:3000/api/todo/updateTodo/${editId}`,
+        `https://todozen-iolq.onrender.com/api/todo/updateTodo/${editId}`,
         updateTodo,
         options
       );

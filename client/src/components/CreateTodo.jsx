@@ -35,10 +35,10 @@ const CreateTodo = () => {
       };
 
        const response = await axios.post(
-        "http://localhost:3000/api/todo/createTodo",
-        { title, body },
-        options
-      );
+         "https://todozen-iolq.onrender.com/api/todo/createTodo",
+         { title, body },
+         options
+       );
       toast({
         title: "Success",
         description: "Todo created successfully",

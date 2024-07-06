@@ -21,7 +21,7 @@ const Todo = () => {
           };
           try {
             const response = await axios.get(
-              "http://localhost:3000/api/todo/getTodos",
+              "https://todozen-iolq.onrender.com/api/todo/getTodos",
               options
             );
             setTodos(response.data.data);
