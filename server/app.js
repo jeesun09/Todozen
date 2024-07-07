@@ -3,8 +3,13 @@ const app = express();
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './db/index.js';
-app.use(cors());
+
 dotenv.config({ path: './.env'});
+
+app.use(cors({
+  origin: process.env.HOST_URL,
+  credentials: true
+}));
 
 const PORT = process.env.PORT;
 connectDB();
