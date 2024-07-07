@@ -124,7 +124,7 @@ const DisplayTodo = ({ todos }) => {
   const handleBodyChange = (e) => setEditBody(e.target.value);
 
   return (
-    <Box w="70%">
+    <Box w={{ base: "100%", lg: "70%" }}>
       {todos.map((todo) => (
         <Box
           key={todo._id}
@@ -144,12 +144,15 @@ const DisplayTodo = ({ todos }) => {
               variant={editId === todo._id ? "flushed" : "unstyled"}
               isReadOnly={editId !== todo._id}
               onChange={editId === todo._id ? handleTitleChange : null}
+              fontSize={{ base: "25px", lg: "25px" }}
             />
             <Input
               variant={editId === todo._id ? "flushed" : "unstyled"}
               value={editId === todo._id ? editBody : todo.body}
               isReadOnly={editId !== todo._id}
               onChange={editId === todo._id ? handleBodyChange : null}
+              fontSize={{ base: "18px", lg: "25px" }}
+              maxW={{ base: "100%", lg: "70%" }}
             />{" "}
           </Box>
           <Box display={"flex"} gap={3}>

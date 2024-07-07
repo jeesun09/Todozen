@@ -33,14 +33,16 @@ const Navbar = () => {
     <Box
       display={"flex"}
       justifyContent={"space-between"}
-      w={"80%"}
+      w={{ base: "100%", md: "90%"}}
+      h={{ base: "60px", md: "50px"}}
       alignItems={"center"}
       bg={"red.100"}
       px={4}
       mt={2}
+      mb={2}
       borderRadius={"full"}
     >
-      <Text>Todozen</Text>
+      <Text fontSize={{base: "25px", md: "30px", lg:"30px"}}>Todozen</Text>
       <Menu>
         <MenuButton
           as={Button}
@@ -50,7 +52,7 @@ const Navbar = () => {
         >
           {user && (
             <Avatar
-              size={"sm"}
+              size={{base: "md", md: "sm", lg: "sm"}}
               cursor={"pointer"}
               name={user.username}
               src={user.avatar}

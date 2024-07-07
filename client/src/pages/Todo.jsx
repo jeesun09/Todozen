@@ -42,7 +42,7 @@ const Todo = () => {
   }, [user, todos]);
 
   return (
-    <Container centerContent maxW={"90%"} bg={"white"} minH={'100vh'}>
+    <Container centerContent maxW={{lg: '90%', md: '100%'}} bg={"white"} minH={'100vh'}>
       <Navbar />
       <CreateTodo />
       <DisplayTodo todos={todos} />

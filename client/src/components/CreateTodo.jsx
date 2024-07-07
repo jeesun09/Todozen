@@ -65,20 +65,32 @@ const CreateTodo = () => {
   };
 
   return (
-    <Stack w={"70%"} boxShadow="outline" m={2} p={1} borderRadius={'lg'}>
+    <Stack
+      boxShadow="outline"
+      m={2}
+      p={1}
+      borderRadius={"lg"}
+      width={{ base: "100%", lg: "70%" }}
+    >
       <Input
         value={title}
         variant="flushed"
         placeholder="Enter the title "
         onChange={(e) => setTitle(e.target.value)}
+        fontSize={{ base: "20px", lg: "25px" }}
       />
       <Input
         value={body}
         variant="outline"
         placeholder="Enter the body"
         onChange={(e) => setBody(e.target.value)}
+        fontSize={{ base: "20px", lg: "25px" }}
       />
-      <Button width={"15%"} onClick={createTodo} isLoading={loading}>
+      <Button
+        width={{ base: "30%", md: "20%", lg: "15%" }}
+        onClick={createTodo}
+        isLoading={loading}
+      >
         Enter
       </Button>
     </Stack>
