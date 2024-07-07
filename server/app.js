@@ -6,20 +6,13 @@ import connectDB from './db/index.js';
 
 dotenv.config({ path: './.env'});
 
-const allowedOrigine = [process.env.HOST_URL];
+const corsOptions = {
+  origin: process.env.HOST_URL,
+  methods: "GET, HEAD, PUT, PATCH, POST, DELETE",
+  credentials: true,
+};
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigine.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-  })
-);
+app.use(cors(corsOptions));
 
 const PORT = process.env.PORT;
 connectDB();
